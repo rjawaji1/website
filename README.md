@@ -20,4 +20,6 @@ All commands are run from the root of the project, from a terminal:
 
 The website source code is licensed under the MIT License.
 
-Blog content, images, branding, and linked portfolio work are excluded unless otherwise stated.
+Unless otherwise stated, blog posts and other original site content are licensed under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+
+Linked portfolio projects may use separate licenses as specified in their respective repositories or project pages.
