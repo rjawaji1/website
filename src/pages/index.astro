@@ -1,17 +1,108 @@
 ---
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name=""/>
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Homepage" description="Rajeev's Portfolio Homepage">
+  <nav class="site-nav" aria-label="Webring navigation">
+    <a
+      class="arrow arrow-left"
+      href="https://ring.twhlynch.me/left"
+      aria-label="Previous Site"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 640 640"
+        width="18"
+        height="18"
+        preserveAspectRatio="xMidYMid"
+        fill="#FFF"
+      >
+        <path d="M73.4 297.4C60.9 309.9 60.9 330.2 73.4 342.7L233.4 502.7C245.9 515.2 266.2 515.2 278.7 502.7C291.2 490.2 291.2 469.9 278.7 457.4L173.3 352L544 352C561.7 352 576 337.7 576 320C576 302.3 561.7 288 544 288L173.3 288L278.7 182.6C291.2 170.1 291.2 149.8 278.7 137.3C266.2 124.8 245.9 124.8 233.4 137.3L73.4 297.3z" />
+      </svg>
+    </a>
+    <a
+      class="arrow arrow-right"
+      href="https://ring.twhlynch.me/right"
+      aria-label="Next Site"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="18"
+        width="18"
+        preserveAspectRatio="xMidYMid"
+        viewBox="0 0 640 640"
+        fill="#FFF"
+      >
+        <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
+      </svg>
+    </a>
+  </nav>
+  <article class="card">
+    <header>
+      <h1>Rajeev Athreya Jawaji</h1>
+      <p class="role">Software Engineer</p>
+      <p class="summary">
+        I enjoy building software and exploring how things work under the hood,
+        especially low-level systems.
+      </p>
+    </header>
+    <nav aria-label="Social Links">
+      <a href="https://au.linkedin.com/in/rjawaji">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          width="18"
+          height="18"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 256 256"
+          fill="#FFF"
+        >
+          <path d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453"></path>
+        </svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/rjawaji1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          width="19"
+          height="19"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 640 640"
+          fill="#FFF"
+        >
+          <path d="M280.5 426.5C214.5 418.5 168 371 168 309.5C168 284.5 177 257.5 192 239.5C185.5 223 186.5 188 194 173.5C214 171 241 181.5 257 196C276 190 296 187 320.5 187C345 187 365 190 383 195.5C398.5 181.5 426 171 446 173.5C453 187 454 222 447.5 239C463.5 258 472 283.5 472 309.5C472 371 425.5 417.5 358.5 426C375.5 437 387 461 387 488.5L387 540.5C387 555.5 399.5 564 414.5 558C505 523.5 576 433 576 321C576 179.5 461 64 319.5 64C178 64 64 179.5 64 321C64 432 134.5 524 229.5 558.5C243 563.5 256 554.5 256 541L256 501C249 504 240 506 232 506C199 506 179.5 488 165.5 454.5C160 441 154 433 142.5 431.5C136.5 431 134.5 428.5 134.5 425.5C134.5 419.5 144.5 415 154.5 415C169 415 181.5 424 194.5 442.5C204.5 457 215 463.5 227.5 463.5C240 463.5 248 459 259.5 447.5C268 439 274.5 431.5 280.5 426.5z" />
+        </svg>
+        GitHub
+      </a>
+      <a href="https://codeberg.org/rjawaji">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          height="19"
+          width="19"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 640 640"
+          fill="#FFF"
+        >
+          <path d="M64 320C64 368.1 77.5 415.3 103.1 456L316.5 180.1C318 178.1 321.9 178.1 323.4 180.1L412.5 295.3L348.7 295.3L350.1 300.4L416.5 300.4L435.3 324.7L356.9 324.7L359.1 332.7L441.5 332.7L458.1 354.1L365.1 354.1L368 364.4L466 364.4L480.8 383.5L373.3 383.5L376.8 396.1L490.4 396.1L503.4 412.9L381.4 412.9L385.3 426.8L514.1 426.8L526.1 442.3L389.6 442.3L393.5 456.2L536.8 456.2C562.5 415.2 576 368 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320zM397.9 471.5L401.8 485.4L515.4 485.4C519.1 481 522.9 476.2 526.4 471.5L397.9 471.5zM406.1 500.9L409.9 514.8L485.9 514.8C490.9 510.6 496.3 505.7 501.1 500.9L406.1 500.9zM414.3 530.3L418.2 544.1L443.9 544.1C451.5 539.7 458.5 535.3 466.1 530.3L414.3 530.3z" />
+        </svg>
+        Codeberg
+      </a>
+      <a href="mailto:rajeev@jawaji.com">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          height="19"
+          width="19"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 640 640"
+          fill="#FFF"
+        >
+          <path d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z" />
+        </svg>
+        Email
+      </a>
+    </nav>
+  </article>
+</Layout>
