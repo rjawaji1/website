@@ -1,14 +1,8 @@
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"compatibility_date": "2026-10-01",
-	"compatibility_flags": ["global_fetch_strictly_public"],
-	"name": "tempo",
-	"main": "@astrojs/cloudflare/entrypoints/server",
+	"name": "website",
 	"assets": {
-		"directory": "./dist",
-		"binding": "ASSETS"
-	},
-	"observability": {
-		"enabled": true
+		"directory": "./dist"
 	}
 }
