@@ -18,6 +18,7 @@
             nodejs-slim_26
             pnpm
             vscode-json-languageserver
+            vscode-css-languageserver
             typescript-language-server
             astro-language-server
           ];
