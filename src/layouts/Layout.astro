@@ -1,6 +1,7 @@
 ---
 import { Font } from "astro:assets";
 import "../styles/global.css";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   title: string;
@@ -22,6 +23,71 @@ const { title, description } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <nav class="webring-nav" aria-label="Webring navigation">
+      <a
+        class="arrow arrow-left"
+        href="https://ring.twhlynch.me/left"
+        aria-label="Previous Site"
+      >
+        <Icon
+          name="fontawesome/solid/arrow-left"
+          width={18}
+          height={18}
+          aria-hidden={true}
+        />
+      </a>
+      <a
+        class="arrow arrow-right"
+        href="https://ring.twhlynch.me/right"
+        aria-label="Next Site"
+      >
+        <Icon
+          name="fontawesome/solid/arrow-right"
+          width={18}
+          height={18}
+          aria-hidden={true}
+        />
+      </a>
+    </nav>
     <slot />
+    <footer>
+      <button
+        class="btn theme-toggle"
+        aria-label="Theme: System"
+        data-theme-toggle
+      >
+        <Icon class="theme-icon theme-icon-system" name="fontawesome/solid/desktop" width={22} height={22}/>
+        <Icon class="theme-icon theme-icon-dark" name="fontawesome/solid/moon" width={22} height={22}/>
+        <Icon class="theme-icon theme-icon-light" name="fontawesome/solid/sun" width={22} height={22} />
+      </button>
+    </footer>
+    <script>
+      const themes = ["system", "dark", "light"];
+      const btnThemeToggle: HTMLButtonElement | null = document.querySelector("[data-theme-toggle]");
+
+      function setTheme(theme: string) {
+        if (theme === "system") {
+          document.documentElement.removeAttribute("data-theme");
+        } else {
+          document.documentElement.setAttribute("data-theme", theme);
+        }
+
+        localStorage.setItem("theme", theme);
+
+        if(btnThemeToggle){
+          btnThemeToggle.dataset.currentTheme = theme;
+          btnThemeToggle.setAttribute("aria-label", `Theme: ${theme}`);
+        }
+      }
+
+      btnThemeToggle?.addEventListener("click", () => {
+        const current = localStorage.getItem("theme") ?? "system";
+        const next = themes[(themes.indexOf(current) + 1) % themes.length];
+        setTheme(next);
+      });
+
+      const current = localStorage.getItem("theme") ?? "system";
+      setTheme(current);
+    </script>
   </body>
 </html>

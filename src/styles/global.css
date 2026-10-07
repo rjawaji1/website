@@ -1,20 +1,61 @@
 @import "./reset.css";
 @import "./normalize.css";
 
+:root {
+  --color-background: #FFFFFF;
+  --color-foreground: #020202;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-background: #020202;
+    --color-foreground: #FFFFFF;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-background: #020202;
+  --color-foreground: #FFFFFF;
+}
+
+:root[data-theme="light"] {
+  --color-background: #FFFFFF;
+  --color-foreground: #020202;
+}
+
+/** Additional Resets */
+button {
+  border: none;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
 body {
   font-family: var(--font-jetbrains-mono), monospace;
 
-  background-color: black;
-  color: white;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 
   min-height: 100dvh;
-  padding: 5rem 1rem;
+  padding: 1rem;
   position: relative;
   line-height: 1.5;
 
   display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
 }
 
 a {
@@ -22,11 +63,12 @@ a {
   text-decoration: none;
 }
 
-.site-nav {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+.webring-nav {
+  /* position: absolute; */
+  /* top: 1rem; */
+  /* right: 1rem; */
   display: flex;
+  justify-content: flex-end;
 }
 
 .card {
@@ -94,8 +136,8 @@ a {
 
 .card nav a:hover,
 .card nav a:focus-visible {
-  background-color: white;
-  color: black;
+  background-color: var(--color-foreground);
+  color: var(--color-background);
 }
 
 .card nav a:hover svg,
@@ -117,12 +159,12 @@ a {
 
 .arrow:hover,
 .arrow:focus-visible {
-  background-color: white;
-  color: black;
+  background-color: var(--color-foreground);
+  color: var(--color-background);
 }
 
 .arrow:focus-visible {
-  outline: 2px solid white;
+  outline: 2px solid var(--color-foreground);
   outline-offset: 4px;
 }
 
@@ -144,4 +186,50 @@ a {
   .card nav a:nth-child(n + 3) {
     border-top: 1px solid;
   }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 3rem;
+  height: 3rem;
+
+  padding: 0.5em 0.5em;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.btn:hover {
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+}
+
+.theme-toggle {
+  position: relative;
+}
+
+.theme-icon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+
+  opacity: 0;
+  filter: blur(6px);
+  transform: scale(0.5);
+
+  transition:
+    opacity 150ms ease,
+    filter 150ms ease,
+    transform 150ms ease;
+}
+
+[data-current-theme="system"] .theme-icon-system,
+[data-current-theme="dark"] .theme-icon-dark,
+[data-current-theme="light"] .theme-icon-light {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
 }

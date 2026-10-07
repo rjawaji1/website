@@ -4,78 +4,54 @@ import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Homepage" description="Rajeev's Portfolio Homepage">
-  <nav class="site-nav" aria-label="Webring navigation">
-    <a
-      class="arrow arrow-left"
-      href="https://ring.twhlynch.me/left"
-      aria-label="Previous Site"
-    >
-      <Icon
-        name="fontawesome/solid/arrow-left"
-        width={18}
-        height={18}
-        aria-hidden={true}
-      />
-    </a>
-    <a
-      class="arrow arrow-right"
-      href="https://ring.twhlynch.me/right"
-      aria-label="Next Site"
-    >
-      <Icon
-        name="fontawesome/solid/arrow-right"
-        width={18}
-        height={18}
-        aria-hidden={true}
-      />
-    </a>
-  </nav>
-  <article class="card">
-    <header>
-      <h1>Rajeev Athreya Jawaji</h1>
-      <p class="role">Software Engineer</p>
-      <p class="summary">
-        I enjoy building software and exploring how things work under the hood,
-        especially low-level systems.
-      </p>
-    </header>
-    <nav aria-label="Social Links">
-      <a href="https://au.linkedin.com/in/rjawaji">
-        <Icon
-          name="fontawesome/brands/linkedin"
-          width={22}
-          height={22}
-          aria-hidden={true}
-        />
-        LinkedIn
-      </a>
-      <a href="https://github.com/rjawaji1">
-        <Icon
-          name="fontawesome/brands/github"
-          width={22}
-          height={22}
-          aria-hidden={true}
-        />
-        GitHub
-      </a>
-      <a href="https://codeberg.org/rjawaji">
-        <Icon
-          name="fontawesome/brands/codeberg"
-          width={22}
-          height={22}
-          aria-hidden={true}
-        />
-        Codeberg
-      </a>
-      <a href="mailto:rajeev@jawaji.com">
-        <Icon
-          name="fontawesome/solid/envelope"
-          width={22}
-          height={22}
-          aria-hidden={true}
-        />
-        Email
-      </a>
-    </nav>
-  </article>
+  <main>
+    <section class="card" aria-labelledby="profile-heading">
+      <header>
+        <h1 id="profile-heading">Rajeev Athreya Jawaji</h1>
+        <p class="role">Software Engineer</p>
+        <p class="summary">
+          I enjoy building software and exploring how things work under the
+          hood, especially low-level systems.
+        </p>
+      </header>
+      <nav aria-label="Social Links">
+        <a href="https://au.linkedin.com/in/rjawaji">
+          <Icon
+            name="fontawesome/brands/linkedin"
+            width={22}
+            height={22}
+            aria-hidden={true}
+          />
+          LinkedIn
+        </a>
+        <a href="https://github.com/rjawaji1">
+          <Icon
+            name="fontawesome/brands/github"
+            width={22}
+            height={22}
+            aria-hidden={true}
+          />
+          GitHub
+        </a>
+        <a href="https://codeberg.org/rjawaji">
+          <Icon
+            name="fontawesome/brands/codeberg"
+            width={22}
+            height={22}
+            aria-hidden={true}
+          />
+          Codeberg
+        </a>
+        <a href="mailto:rajeev@jawaji.com">
+          <Icon
+            name="fontawesome/solid/envelope"
+            width={22}
+            height={22}
+            aria-hidden={true}
+          />
+          Email
+        </a>
+      </nav>
+    </section>
+  </main>
 </Layout>
