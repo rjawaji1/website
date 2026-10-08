@@ -2,8 +2,8 @@
 @import "./normalize.css";
 
 :root {
-  --color-background: #FFFFFF;
-  --color-foreground: #020202;
+  --color-background: #020202;
+  --color-foreground: #FFFFFF;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,6 +64,36 @@ a {
   text-decoration: none;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+}
+
+header nav a {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+
+  padding: 0.75rem 1rem;
+
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+  }
+}
+
+header nav a.active {
+  border-bottom: 1px solid var(--color-foreground);
+}
+
 .webring-nav {
   /* position: absolute; */
   /* top: 1rem; */
@@ -78,7 +108,7 @@ a {
   border: 1px solid;
 }
 
-.card header {
+.card .card-header {
   padding: 1.5rem;
   min-height: 190px;
 
@@ -86,14 +116,14 @@ a {
   flex-direction: column;
 }
 
-.card header h1 {
+.card .card-header h1 {
   font-size: clamp(1.75rem, 4vw, 2.25rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
-.card header .role {
+.card .card-header .role {
   margin-top: 0.15rem;
 
   font-size: 0.95rem;
@@ -101,7 +131,7 @@ a {
   opacity: 0.8;
 }
 
-.card header .summary {
+.card .card-header .summary {
   margin-top: 1rem;
   max-width: 50ch;
 
