@@ -1,5 +1,4 @@
-@import "./reset.css";
-@import "./normalize.css";
+@import "./preflight.css" layer(reset);
 
 :root {
   --color-background: #020202;
@@ -21,13 +20,6 @@
 :root[data-theme="light"] {
   --color-background: #FFFFFF;
   --color-foreground: #020202;
-}
-
-/** Additional Resets */
-button {
-  border: none;
-  background-color: var(--color-background);
-  color: var(--color-foreground);
 }
 
 body {
